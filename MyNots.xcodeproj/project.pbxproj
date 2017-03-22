@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		241BE29E1E82B0CF008C5496 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241BE29D1E82B0CF008C5496 /* AVFoundation.framework */; };
+		241BE2A21E82B8F0008C5496 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241BE2A11E82B8F0008C5496 /* AudioToolbox.framework */; };
+		241BE2A51E82BC5D008C5496 /* delete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 241BE2A41E82BC5D008C5496 /* delete.mp3 */; };
+		241BE2A71E82BD42008C5496 /* segue.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 241BE2A61E82BD42008C5496 /* segue.mp3 */; };
 		24B2D2B11E824C96002C720E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B2D2B01E824C96002C720E /* main.m */; };
 		24B2D2B41E824C96002C720E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B2D2B31E824C96002C720E /* AppDelegate.m */; };
 		24B2D2B71E824C96002C720E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B2D2B61E824C96002C720E /* ViewController.m */; };
@@ -18,7 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		241BE29B1E828E86008C5496 /* moo.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = moo.m4a; sourceTree = "<group>"; };
+		241BE29D1E82B0CF008C5496 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		241BE2A11E82B8F0008C5496 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		241BE2A41E82BC5D008C5496 /* delete.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = delete.mp3; sourceTree = "<group>"; };
+		241BE2A61E82BD42008C5496 /* segue.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = segue.mp3; sourceTree = "<group>"; };
 		24B2D2AC1E824C95002C720E /* MyNots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B2D2B01E824C96002C720E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		24B2D2B21E824C96002C720E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -40,17 +47,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241BE2A21E82B8F0008C5496 /* AudioToolbox.framework in Frameworks */,
+				241BE29E1E82B0CF008C5496 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		241BE29C1E82B0CE008C5496 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				241BE2A11E82B8F0008C5496 /* AudioToolbox.framework */,
+				241BE29D1E82B0CF008C5496 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		241BE2A81E82BD5A008C5496 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				241BE2A41E82BC5D008C5496 /* delete.mp3 */,
+				241BE2A61E82BD42008C5496 /* segue.mp3 */,
+			);
+			name = sounds;
+			sourceTree = "<group>";
+		};
 		24B2D2A31E824C95002C720E = {
 			isa = PBXGroup;
 			children = (
 				24B2D2AE1E824C95002C720E /* MyNots */,
 				24B2D2AD1E824C95002C720E /* Products */,
+				241BE29C1E82B0CE008C5496 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,8 +93,8 @@
 		24B2D2AE1E824C95002C720E /* MyNots */ = {
 			isa = PBXGroup;
 			children = (
+				241BE2A81E82BD5A008C5496 /* sounds */,
 				24B2D2B21E824C96002C720E /* AppDelegate.h */,
-				241BE29B1E828E86008C5496 /* moo.m4a */,
 				24B2D2B31E824C96002C720E /* AppDelegate.m */,
 				24B2D2B51E824C96002C720E /* ViewController.h */,
 				24B2D2B61E824C96002C720E /* ViewController.m */,
@@ -153,6 +181,8 @@
 				24B2D2BF1E824C96002C720E /* LaunchScreen.storyboard in Resources */,
 				24B2D2BC1E824C96002C720E /* Assets.xcassets in Resources */,
 				24B2D2BA1E824C96002C720E /* Main.storyboard in Resources */,
+				241BE2A71E82BD42008C5496 /* segue.mp3 in Resources */,
+				241BE2A51E82BC5D008C5496 /* delete.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

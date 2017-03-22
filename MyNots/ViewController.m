@@ -10,10 +10,11 @@
 #import "Note.h"
 #import "ContentViewController.h"
 
-
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(strong,nonatomic) NSMutableArray *notes;
+
+
 
 @end
 
@@ -23,6 +24,8 @@
     self.notes =[[NSMutableArray alloc] init];
     [super viewDidLoad];
     [self prepareTableView];
+    [self prepareSound];
+    
 }
 
 
@@ -31,7 +34,16 @@
     
     [self.tableView reloadData];
 }
-
+-(void) prepareSound{
+    // Construct URL to sound file
+    NSString *path1 = [NSString stringWithFormat:@"%@/delete.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSString *path2 = [NSString stringWithFormat:@"%@/segue.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSURL *deleteUrl = [NSURL fileURLWithPath:path1];
+    NSURL *segueUrl = [NSURL fileURLWithPath:path2];
+    // Audio player object and initialize with URL to sound
+    audioPlayer1 = [[AVAudioPlayer alloc] initWithContentsOfURL:deleteUrl error:nil];
+    audioPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:segueUrl error:nil];
+}
 -(void) prepareTableView{
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -55,16 +67,19 @@
     [ self performSegueWithIdentifier:@"shownote" sender:self];
 }
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-   
+    
+   [audioPlayer1 play];
     [self.notes removeObjectAtIndex:indexPath.row];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"shownote"]) {
+         [audioPlayer2 play];
         ContentViewController *contentViewController = [segue destinationViewController];
         NSIndexPath *selectedIndexPath = self.tableView.indexPathForSelectedRow;
         contentViewController.note = self.notes[selectedIndexPath.row];
     } else if ([segue.identifier isEqualToString:@"addnote"]) {
+         [audioPlayer2 play];
         Note *note = [Note new];
         [self.notes addObject:note];
         ContentViewController *contentViewController = [segue destinationViewController];

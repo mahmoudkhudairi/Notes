@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import <AVFoundation/AVFoundation.h>
+#import <CoreAudioKit/CoreAudioKit.h>
+@interface ViewController : UIViewController{
+    AVAudioPlayer * audioPlayer1;
+    AVAudioPlayer * audioPlayer2;
+    
+}
 
 @end
 
