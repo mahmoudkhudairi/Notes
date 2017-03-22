@@ -13,9 +13,12 @@
 		24B2D2BA1E824C96002C720E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B2D2B81E824C96002C720E /* Main.storyboard */; };
 		24B2D2BC1E824C96002C720E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24B2D2BB1E824C96002C720E /* Assets.xcassets */; };
 		24B2D2BF1E824C96002C720E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B2D2BD1E824C96002C720E /* LaunchScreen.storyboard */; };
+		24B2D2C81E824CCB002C720E /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B2D2C71E824CCB002C720E /* Note.m */; };
+		24B2D2CB1E82532A002C720E /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B2D2CA1E82532A002C720E /* ContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		241BE29B1E828E86008C5496 /* moo.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = moo.m4a; sourceTree = "<group>"; };
 		24B2D2AC1E824C95002C720E /* MyNots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B2D2B01E824C96002C720E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		24B2D2B21E824C96002C720E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +29,10 @@
 		24B2D2BB1E824C96002C720E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24B2D2BE1E824C96002C720E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24B2D2C01E824C96002C720E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24B2D2C61E824CCB002C720E /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		24B2D2C71E824CCB002C720E /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		24B2D2C91E82532A002C720E /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		24B2D2CA1E82532A002C720E /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,14 +66,19 @@
 			isa = PBXGroup;
 			children = (
 				24B2D2B21E824C96002C720E /* AppDelegate.h */,
+				241BE29B1E828E86008C5496 /* moo.m4a */,
 				24B2D2B31E824C96002C720E /* AppDelegate.m */,
 				24B2D2B51E824C96002C720E /* ViewController.h */,
 				24B2D2B61E824C96002C720E /* ViewController.m */,
 				24B2D2B81E824C96002C720E /* Main.storyboard */,
+				24B2D2C61E824CCB002C720E /* Note.h */,
+				24B2D2C71E824CCB002C720E /* Note.m */,
 				24B2D2BB1E824C96002C720E /* Assets.xcassets */,
 				24B2D2BD1E824C96002C720E /* LaunchScreen.storyboard */,
 				24B2D2C01E824C96002C720E /* Info.plist */,
 				24B2D2AF1E824C96002C720E /* Supporting Files */,
+				24B2D2C91E82532A002C720E /* ContentViewController.h */,
+				24B2D2CA1E82532A002C720E /* ContentViewController.m */,
 			);
 			path = MyNots;
 			sourceTree = "<group>";
@@ -152,8 +164,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				24B2D2B71E824C96002C720E /* ViewController.m in Sources */,
+				24B2D2CB1E82532A002C720E /* ContentViewController.m in Sources */,
 				24B2D2B41E824C96002C720E /* AppDelegate.m in Sources */,
 				24B2D2B11E824C96002C720E /* main.m in Sources */,
+				24B2D2C81E824CCB002C720E /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +326,7 @@
 				24B2D2C51E824C96002C720E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

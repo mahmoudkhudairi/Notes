@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ContentViewController.h
 //  MyNots
 //
 //  Created by mahmoud khudairi on 3/22/17.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
-
+#import "Note.h"
+@interface ContentViewController : UIViewController
+@property (nonatomic, strong) Note *note;
 @end
-
