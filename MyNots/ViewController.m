@@ -9,11 +9,11 @@
 #import "ViewController.h"
 #import "Note.h"
 #import "ContentViewController.h"
-
+#import <AudioToolbox/AudioToolbox.h>
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(strong,nonatomic) NSMutableArray *notes;
-
+ @property (nonatomic, strong) Note *note;
 
 
 @end
@@ -24,25 +24,15 @@
     self.notes =[[NSMutableArray alloc] init];
     [super viewDidLoad];
     [self prepareTableView];
-    [self prepareSound];
+   
     
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+  
     [self.tableView reloadData];
-}
--(void) prepareSound{
-    // Construct URL to sound file
-    NSString *path1 = [NSString stringWithFormat:@"%@/delete.mp3", [[NSBundle mainBundle] resourcePath]];
-    NSString *path2 = [NSString stringWithFormat:@"%@/segue.mp3", [[NSBundle mainBundle] resourcePath]];
-    NSURL *deleteUrl = [NSURL fileURLWithPath:path1];
-    NSURL *segueUrl = [NSURL fileURLWithPath:path2];
-    // Audio player object and initialize with URL to sound
-    audioPlayer1 = [[AVAudioPlayer alloc] initWithContentsOfURL:deleteUrl error:nil];
-    audioPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:segueUrl error:nil];
 }
 -(void) prepareTableView{
     self.tableView.delegate = self;
@@ -59,27 +49,29 @@
     
     cell.textLabel.text = [self.notes[indexPath.row] title];
     cell.detailTextLabel.text = [self.notes[indexPath.row] content];
-    
     return cell;
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [ self performSegueWithIdentifier:@"shownote" sender:self];
 }
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-   [audioPlayer1 play];
+    AudioServicesPlaySystemSound(1023);
+   
     [self.notes removeObjectAtIndex:indexPath.row];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+   AudioServicesPlaySystemSound(1001);
     if ([segue.identifier isEqualToString:@"shownote"]) {
-         [audioPlayer2 play];
+        
         ContentViewController *contentViewController = [segue destinationViewController];
         NSIndexPath *selectedIndexPath = self.tableView.indexPathForSelectedRow;
+       // contentViewController.notes = self.notes
         contentViewController.note = self.notes[selectedIndexPath.row];
     } else if ([segue.identifier isEqualToString:@"addnote"]) {
-         [audioPlayer2 play];
+        
         Note *note = [Note new];
         [self.notes addObject:note];
         ContentViewController *contentViewController = [segue destinationViewController];

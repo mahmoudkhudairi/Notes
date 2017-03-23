@@ -10,4 +10,5 @@
 #import "Note.h"
 @interface ContentViewController : UIViewController
 @property (nonatomic, strong) Note *note;
+@property (nonatomic, strong) NSMutableArray *notes;
 @end
